@@ -1,0 +1,12 @@
+name: Pull Request Workflow
+on:
+  pull_request:
+    types: [ assigned, opened, synchronize, reopened ]
+jobs:
+  log-the-inputs:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Log level: $LEVEL"
+        env:
+          LEVEL: "!@3"
